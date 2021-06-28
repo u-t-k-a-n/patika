@@ -41,60 +41,32 @@ FROM customer
 );
 
 4.
-
 (
-SELECT last_name
+SELECT first_name
 FROM actor)
-UNION
+UNION ALL
 (
-SELECT last_name
+SELECT first_name
 FROM customer
 );
 
 (
-SELECT last_name
+SELECT first_name
 FROM actor)
-INTERSECT
+INTERSECT ALL
 (
-SELECT last_name
+SELECT first_name
 FROM customer
 );
 
 (
-SELECT last_name
+SELECT first_name
 FROM actor)
-EXCEPT
+EXCEPT ALL
 (
-SELECT last_name
+SELECT first_name
 FROM customer
 );
 
-(
-SELECT last_update
-FROM actor
-)
-UNION
-(
-SELECT last_update
-FROM customer
-);
 
-(
-SELECT last_update
-FROM actor
-)
-INTERSECT
-(
-SELECT last_update
-FROM customer
-);
 
-(
-SELECT last_update
-FROM actor
-)
-EXCEPT
-(
-SELECT last_update
-FROM customer
-);
