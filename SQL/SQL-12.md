@@ -42,17 +42,19 @@ WHERE rental_rate=(
 ;
 
 4.
-SELECT *
-FROM customer
-INNER JOIN payment ON payment.customer_id=customer.customer_id
-WHERE customer.customer_id= ANY (SELECT customer_id
+SELECT customer.customer_id,customer.first_name,customer.last_name,COUNT(*)
 FROM payment
-GROUP BY customer_id
+INNER JOIN customer ON customer.customer_id=payment.customer_id
+GROUP BY customer.customer_id,customer.first_name,customer.last_name
+HAVING CUSTOMER.CUSTOMER_ID = ANY
+		(SELECT CUSTOMER_ID
+			FROM PAYMENT
+			GROUP BY CUSTOMER_ID
+			HAVING COUNT(*) = ANY
+				(SELECT COUNT(*)
+					FROM PAYMENT
+					GROUP BY CUSTOMER_ID
+					ORDER BY COUNT(*) DESC
+					LIMIT 1))
+;
 
-HAVING COUNT(\*)=(SELECT count(\*)
-FROM payment
-GROUP BY customer_id
-ORDER BY COUNT(\*) DESC
-LIMIT 1
-)
-);
