@@ -6,3 +6,5 @@ Python Temel : https://app.patika.dev/egitimler/veri-bilimi-patikasi/python-teme
 SQL : https://app.patika.dev/egitimler/veri-bilimi-patikasi/sql/intro
 
 Veri Bilimi 101 : https://app.patika.dev/egitimler/veri-bilimi-patikasi/veri-bilimi-101/proje
+
+DSPG Projeleri : https://app.patika.dev/egitimler/data-science-for-the-public-good-patikasi/dspg-projeleri/binalar%C4%B1n_enerji_verimliligi
