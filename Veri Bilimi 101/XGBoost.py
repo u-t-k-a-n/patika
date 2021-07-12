@@ -12,7 +12,7 @@ from sklearn.model_selection import train_test_split
 #from google.colab import files -> for colab environment
 
 x_train_path=list(files.upload().keys())[0] #for colab environment
-# x_train_path= /data.train.csv
+# x_train_path= /data/train.csv
 x_train_full=pd.read_csv(x_train_path)
 
 y=x_train_full["SalePrice"]
